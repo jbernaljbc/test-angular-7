@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>JBernal</span>
+    <span></span>
+    <nav style="padding-left:10px">
+      <a routerLink="/oc">Ordenes de compra, Detalle</a>
+    </nav>
+    <span class="example-spacer"></span>
+    <a routerLink="/logout">Salir</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="row justify-content-center">
+  <div *ngIf="detail" class="col-10">
+    <p>ID: {{detail.id}}</p>
+    <p>User: {{detail.user}}</p>
+    <p>Fecha {{detail.date}}</p>
+    <p>Documento:</p>
+    <p>Código licitación: {{detail.document[0].document.bidding_code}}</p>
+    <p>Comentario: {{detail.document[0].document.comment}}</p>
+  </div>
+  <div class="col-10">
+    <a mat-button [routerLink]="['/oc']">
+      Volver
+    </a>
+  </div>
+
+</div>
